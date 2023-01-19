@@ -17,7 +17,7 @@ let lado3 = parseInt(prompt("escribe el valor del lado 3"))
 
 
 if(lado1 == lado2 && lado1 == lado3){
-	console.log("el triangulo es quilatero")
+	console.log("el triangulo es equilatero")
 }
 if(lado1 != lado2 && lado1 != lado3 && lado2 != lado3){
 	console.log("el triangulo es escaleno")
@@ -152,24 +152,29 @@ else{
 /*7 Dados los valores A, B y C que son los parámetros de una
 ecuación de segundo grado, elaborar un algoritmo para hallar
 las posibles soluciones de dicha ecuación*/
-
 let a = parseInt(prompt("escribe el valor de a"))
 let b = parseInt(prompt("escribe el valor de b"))
 let c = parseInt(prompt("escribe el valor de c"))
 
-d=b^2-4*a*c
-e=2*a
+var d = b * b - (4* a*c)
 
-if (d = 0){
-	console.log("x1 = x2 =", - b / e)
+if (a == 0 && b == 0 && c == 0){
+	console.log("coeficientes nulos")
 }
-if (d > 0){
-	console.log("x1 =", (- b + Math.pow(d)) / e)
-	console.log("x2 =", (- b - Math.pow(d)) / e)
+else if (d == 0){
+	x= (-1)*b2/(2*a)
+	console.log("Existe una raiz doble de valor: %d",x)
+	
 }
-else{
-	console.log("x1 =", - b / e, "+", Math.pow(- d) / e, "i")
-	console.log("x2 =", - b / e, "-", Math.pow(- d) / e, "i")
+else if( d >0){
+	d= Math.sqrt(d)
+	x=(((-1)*b-d)/2*a).toFixed(2)
+	y=(((-1)*b+d)/2*a).toFixed(2)
+	console.log("las raises son %d,%d",x,y)
+}else{
+	x=(-1)*b/(2*a)
+	var e = math.sqrt((-1)*d)/(2*a)
+	console.log("las raices son imaginarias: %d + %di,%d - %di",x,e,x,e)
 }
 
 
@@ -249,5 +254,3 @@ if(unidades>10 ){
 	descuento3 = valor*0.40
 	console.log(valor-descuento3)
 }
-
-
